@@ -191,10 +191,110 @@
             line-height: 1.8;
         }
 
+        /* Pricing Section */
+        .pricing {
+            padding: 100px 20px;
+            background: linear-gradient(135deg, #F2F2F7 0%, #E5E5EA 100%);
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .pricing-card {
+            background-color: white;
+            padding: 40px 32px;
+            border-radius: 16px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            position: relative;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+        }
+
+        .pricing-card.recommended {
+            border: 3px solid var(--primary-color);
+        }
+
+        .pricing-badge {
+            display: inline-block;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 16px;
+        }
+
+        .pricing-badge.free {
+            background-color: var(--success-color);
+            color: white;
+        }
+
+        .pricing-badge.recommended {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--info-color) 100%);
+            color: white;
+        }
+
+        .pricing-card h3 {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            color: var(--text-primary);
+        }
+
+        .price {
+            font-size: 36px;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 8px;
+        }
+
+        .price-description {
+            font-size: 14px;
+            color: var(--text-secondary);
+            margin-bottom: 24px;
+        }
+
+        .pricing-features {
+            list-style: none;
+            margin-bottom: 20px;
+        }
+
+        .pricing-features li {
+            padding: 10px 0;
+            color: var(--text-secondary);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .pricing-features li:last-child {
+            border-bottom: none;
+        }
+
+        .pricing-features i {
+            color: var(--success-color);
+            margin-right: 12px;
+        }
+
+        .pricing-note {
+            font-size: 12px;
+            color: var(--text-tertiary);
+            margin-top: 16px;
+            font-style: italic;
+        }
+
         /* Benefits Section */
         .benefits {
             padding: 100px 20px;
-            background: linear-gradient(135deg, #F2F2F7 0%, #E5E5EA 100%);
+            background-color: var(--background);
         }
 
         .benefits-grid {
@@ -415,8 +515,8 @@
                         style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white;">
                         <i class="fas fa-microphone" style="font-size: 32px;"></i>
                     </div>
-                    <h3>音声入力のみ</h3>
-                    <p>キーボード入力は不要。マイクボタンを押して話すだけで、あなたの思考を記録できます。移動中やリラックスしているときでも、思いついたアイデアをすぐに形にできます。</p>
+                    <h3>高精度な音声認識</h3>
+                    <p>最新のAI技術による高精度な音声認識を採用。マイクボタンを押して話すだけで、あなたの思考を正確にテキスト化します。文字起こし結果は手動で編集も可能です。</p>
                 </div>
 
                 <div class="feature-card">
@@ -425,7 +525,7 @@
                         <i class="fas fa-brain" style="font-size: 32px;"></i>
                     </div>
                     <h3>AI自動整理</h3>
-                    <p>ChatGPT APIが発話内容を分析し、自動的にマインドマップを生成。関連性のあるアイデアをグループ化し、階層構造を自動で作成します。</p>
+                    <p>AIが発話内容を分析し、自動的にマインドマップを生成。関連性のあるアイデアをグループ化し、階層構造を自動で作成します。</p>
                 </div>
 
                 <div class="feature-card">
@@ -434,7 +534,7 @@
                         <i class="fas fa-project-diagram" style="font-size: 32px;"></i>
                     </div>
                     <h3>視覚的に整理</h3>
-                    <p>自動生成されたマインドマップで、複雑な思考も一目で把握。ノードのドラッグ移動、親子関係の編集も簡単にできます。</p>
+                    <p>自動生成されたマインドマップで、複雑な思考も一目で把握。親子関係の編集も簡単にできます。</p>
                 </div>
 
                 <div class="feature-card">
@@ -461,7 +561,7 @@
                         <i class="fas fa-edit" style="font-size: 32px;"></i>
                     </div>
                     <h3>手動編集も可能</h3>
-                    <p>AIが自動生成したマップは、長押しでノードを移動したり、親子関係を変更したりできます。あなたの思考に合わせて自由にカスタマイズ。</p>
+                    <p>AIが自動生成したマップは、親子関係を変更したり、ノードを編集したりできます。あなたの思考に合わせて自由にカスタマイズ。</p>
                 </div>
             </div>
         </div>
@@ -501,13 +601,50 @@
         </div>
     </section>
 
+    <!-- Pricing Section -->
+    <section class="pricing">
+        <div class="container">
+            <h2 class="section-title">シンプルな料金プラン</h2>
+            <p class="section-subtitle">月間60分の無料枠で気軽に始められます</p>
+
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <div class="pricing-badge free">無料</div>
+                    <h3>月間無料枠</h3>
+                    <div class="price">60分/月</div>
+                    <p class="price-description">毎月手動で受け取れる無料の音声認識時間</p>
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check"></i> 全機能利用可能</li>
+                        <li><i class="fas fa-check"></i> マインドマップ無制限作成</li>
+                        <li><i class="fas fa-check"></i> PDF出力無制限</li>
+                        <li><i class="fas fa-check"></i> ローカルストレージで安全</li>
+                    </ul>
+                </div>
+
+                <div class="pricing-card recommended">
+                    <div class="pricing-badge recommended">おすすめ</div>
+                    <h3>時間追加パック</h3>
+                    <div class="price">¥100〜</div>
+                    <p class="price-description">必要な時に追加購入できる音声認識時間</p>
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check"></i> 30分: ¥100</li>
+                        <li><i class="fas fa-check"></i> 60分: ¥180</li>
+                        <li><i class="fas fa-check"></i> 120分: ¥300</li>
+                        <li><i class="fas fa-check"></i> 180分: ¥400</li>
+                    </ul>
+                    <p class="pricing-note">※ 購入した時間は無期限で使用可能</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Privacy Section -->
     <section class="privacy">
         <div class="container">
             <div class="privacy-content">
                 <div class="privacy-badge"><i class="fas fa-shield-alt"></i> プライバシー第一</div>
                 <h2 class="section-title">あなたのデータは、あなただけのもの</h2>
-                <p class="section-subtitle">マインドマップは全てデバイス内にローカル保存。音声認識とAI処理のみ外部API使用。</p>
+                <p class="section-subtitle">マインドマップは全てデバイス内に安全に保存。音声認識とAI処理のみ外部サービスを使用。</p>
 
                 <div class="privacy-features">
                     <div class="privacy-feature">
