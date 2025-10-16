@@ -14,7 +14,442 @@
     <meta property="og:site_name" content="VoiceMap">
 
     <title>利用規約 - VoiceMap</title>
-    <link rel="stylesheet" href="common.css">
+    <style>
+        /* ========================================
+           共通スタイル - VoiceMap
+           ======================================== */
+
+        /* リセット・基本設定 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, Arial, sans-serif;
+            line-height: 1.8;
+            color: #333;
+            background: #f8f9fa;
+        }
+
+        /* スキップリンク（アクセシビリティ） */
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: #667eea;
+            color: white;
+            padding: 8px 16px;
+            text-decoration: none;
+            z-index: 100;
+            border-radius: 0 0 4px 0;
+        }
+
+        .skip-link:focus {
+            top: 0;
+        }
+
+        /* コンテナ */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* ヘッダー */
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 50;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+            text-decoration: none;
+            color: white;
+            transition: opacity 0.2s;
+        }
+
+        .logo:hover,
+        .logo:focus {
+            opacity: 0.9;
+        }
+
+        .back-link {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: opacity 0.2s;
+            padding: 8px 16px;
+            border-radius: 4px;
+        }
+
+        .back-link:hover,
+        .back-link:focus {
+            opacity: 0.8;
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        /* メインコンテンツ */
+        main {
+            min-height: calc(100vh - 200px);
+        }
+
+        .content {
+            background: white;
+            margin: 40px auto;
+            padding: 60px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            animation: fadeIn 0.6s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* 見出し */
+        h1 {
+            font-size: 32px;
+            margin-bottom: 10px;
+            color: #667eea;
+            line-height: 1.4;
+        }
+
+        .last-updated {
+            color: #666;
+            margin-bottom: 40px;
+            font-size: 14px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        h2 {
+            font-size: 24px;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            color: #333;
+            border-bottom: 2px solid #667eea;
+            padding-bottom: 10px;
+            scroll-margin-top: 80px; /* sticky header対応 */
+        }
+
+        h3 {
+            font-size: 20px;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            color: #555;
+            font-weight: 600;
+        }
+
+        /* テキスト */
+        p {
+            margin-bottom: 20px;
+            color: #555;
+        }
+
+        ul, ol {
+            margin-left: 30px;
+            margin-bottom: 20px;
+        }
+
+        li {
+            margin-bottom: 10px;
+            color: #555;
+        }
+
+        strong {
+            color: #333;
+            font-weight: 600;
+        }
+
+        /* リンク */
+        a {
+            color: #667eea;
+            transition: color 0.2s;
+        }
+
+        a:hover {
+            color: #764ba2;
+        }
+
+        a:focus {
+            outline: 2px solid #667eea;
+            outline-offset: 2px;
+        }
+
+        /* ハイライトボックス */
+        .highlight {
+            background: #fff3cd;
+            padding: 20px;
+            border-left: 4px solid #ffc107;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+
+        .highlight strong {
+            display: block;
+            margin-bottom: 8px;
+            color: #856404;
+        }
+
+        .highlight ul {
+            margin-top: 10px;
+        }
+
+        /* 目次 */
+        .toc {
+            background: #f8f9fa;
+            padding: 24px;
+            border-radius: 8px;
+            margin-bottom: 40px;
+            border: 1px solid #e0e0e0;
+        }
+
+        .toc h2 {
+            font-size: 20px;
+            margin-top: 0;
+            margin-bottom: 16px;
+            border-bottom: none;
+            color: #667eea;
+        }
+
+        .toc ul {
+            list-style: none;
+            margin-left: 0;
+            margin-bottom: 0;
+        }
+
+        .toc > ul > li {
+            margin-bottom: 8px;
+        }
+
+        .toc a {
+            text-decoration: none;
+            color: #555;
+            display: block;
+            padding: 4px 0;
+            transition: all 0.2s;
+        }
+
+        .toc a:hover {
+            color: #667eea;
+            padding-left: 8px;
+        }
+
+        /* トップに戻るボタン */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #667eea;
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s;
+            z-index: 40;
+        }
+
+        .back-to-top.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            background: #764ba2;
+            transform: translateY(-4px);
+            box-shadow: 0 6px 16px rgba(102, 126, 234, 0.5);
+        }
+
+        .back-to-top:focus {
+            outline: 2px solid #667eea;
+            outline-offset: 2px;
+        }
+
+        /* フッター */
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            color: #999;
+            background: white;
+            margin-top: 40px;
+            border-top: 1px solid #e0e0e0;
+        }
+
+        /* レスポンシブデザイン */
+        @media (max-width: 768px) {
+            .content {
+                padding: 30px 20px;
+                margin: 20px auto;
+            }
+
+            h1 {
+                font-size: 24px;
+            }
+
+            h2 {
+                font-size: 20px;
+                scroll-margin-top: 70px;
+            }
+
+            h3 {
+                font-size: 18px;
+            }
+
+            .toc {
+                padding: 16px;
+            }
+
+            .back-to-top {
+                bottom: 20px;
+                right: 20px;
+                width: 45px;
+                height: 45px;
+            }
+
+            .logo {
+                font-size: 24px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 16px;
+            }
+
+            .content {
+                padding: 24px 16px;
+                margin: 16px auto;
+                border-radius: 8px;
+            }
+
+            ul, ol {
+                margin-left: 20px;
+            }
+        }
+
+        /* プリント用スタイル */
+        @media print {
+            body {
+                background: white;
+            }
+
+            header,
+            .back-to-top,
+            .back-link {
+                display: none;
+            }
+
+            .content {
+                box-shadow: none;
+                margin: 0;
+                padding: 20px;
+            }
+
+            a {
+                color: #333;
+                text-decoration: underline;
+            }
+
+            .highlight {
+                border: 1px solid #999;
+            }
+        }
+
+        /* ダークモード対応 */
+        @media (prefers-color-scheme: dark) {
+            body {
+                background: #1a1a1a;
+                color: #e0e0e0;
+            }
+
+            .content {
+                background: #2d2d2d;
+                color: #e0e0e0;
+            }
+
+            h1, h2, h3 {
+                color: #8a9cff;
+            }
+
+            p, li {
+                color: #c0c0c0;
+            }
+
+            .last-updated {
+                color: #999;
+                border-bottom-color: #444;
+            }
+
+            .toc {
+                background: #252525;
+                border-color: #444;
+            }
+
+            .toc a {
+                color: #c0c0c0;
+            }
+
+            .toc a:hover {
+                color: #8a9cff;
+            }
+
+            .highlight {
+                background: #3a3a1a;
+                border-left-color: #ffc107;
+            }
+
+            .highlight strong {
+                color: #ffd966;
+            }
+
+            footer {
+                background: #2d2d2d;
+                border-top-color: #444;
+            }
+
+            a {
+                color: #8a9cff;
+            }
+
+            a:hover {
+                color: #a8b6ff;
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- スキップリンク（アクセシビリティ） -->
@@ -32,7 +467,7 @@
         <div class="container">
             <article class="content">
                 <h1>利用規約</h1>
-                <p class="last-updated">最終更新日: 2025年10月9日</p>
+                <p class="last-updated">最終更新日: 2025年10月15日</p>
 
                 <p>本利用規約（以下「本規約」といいます）は、VoiceMap（以下「本アプリ」といいます）の利用条件を定めるものです。本アプリをご利用になる際には、本規約の全文をお読みいただいた上で、本規約に同意いただく必要があります。</p>
 
@@ -43,13 +478,14 @@
                         <li><a href="#section1">第1条（適用）</a></li>
                         <li><a href="#section2">第2条（定義）</a></li>
                         <li><a href="#section3">第3条（本アプリの提供）</a></li>
-                        <li><a href="#section4">第4条（アプリ内課金）</a></li>
-                        <li><a href="#section5">第5条（禁止事項）</a></li>
-                        <li><a href="#section6">第6条（コンテンツの取扱い）</a></li>
-                        <li><a href="#section7">第7条（保証の否認および免責）</a></li>
-                        <li><a href="#section8">第8条（利用規約の変更）</a></li>
-                        <li><a href="#section9">第9条（準拠法および管轄裁判所）</a></li>
-                        <li><a href="#section10">第10条（お問い合わせ）</a></li>
+                        <li><a href="#section4">第4条（音声認識時間と課金）</a></li>
+                        <li><a href="#section5">第5条（広告表示）</a></li>
+                        <li><a href="#section6">第6条（禁止事項）</a></li>
+                        <li><a href="#section7">第7条（コンテンツの取扱い）</a></li>
+                        <li><a href="#section8">第8条（保証の否認および免責）</a></li>
+                        <li><a href="#section9">第9条（利用規約の変更）</a></li>
+                        <li><a href="#section10">第10条（準拠法および管轄裁判所）</a></li>
+                        <li><a href="#section11">第11条（お問い合わせ）</a></li>
                     </ul>
                 </nav>
 
@@ -80,7 +516,7 @@
 
                 <h3>4.1 月間無料枠</h3>
                 <ol>
-                    <li>本アプリは、ユーザーに対して月間60分の無料音声認識時間を提供します。</li>
+                    <li>本アプリは、ユーザーに対して月間30分の無料音声認識時間を提供します。</li>
                     <li>月間無料枠は、ユーザーがアプリ内で手動で受け取る必要があります。自動的には付与されません。</li>
                     <li>月間無料枠の受け取り履歴は、ユーザーの端末内にローカル保存されます。</li>
                     <li>月間無料枠で、本アプリの全機能（マインドマップ作成、PDF出力等）を無制限に利用できます。</li>
@@ -113,7 +549,17 @@
                     <li>レシート検証は、不正な購入を防止するために必須です。検証に失敗した場合、音声認識時間は付与されません。</li>
                 </ol>
 
-                <h2 id="section5">第5条（禁止事項）</h2>
+                <h2 id="section5">第5条（広告表示）</h2>
+                <ol>
+                    <li>本アプリは、ユーザーに対して、Google AdMobを通じた広告を表示します。</li>
+                    <li>バナー広告は、ホーム画面およびマインドマップ画面に表示されます。</li>
+                    <li>リワード広告（動画広告）を視聴することで、1分間の音声認識時間を獲得できます。リワード広告は、1日3回まで視聴可能です。</li>
+                    <li>本アプリで表示される広告は、パーソナライズされていない広告です。ただし、AdMobは、広告配信のために、端末情報、広告インタラクション、IPアドレス等の情報を収集する場合があります。詳細は<a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Googleのプライバシーポリシー</a>をご確認ください。</li>
+                    <li>ユーザーは、広告の表示を妨げる行為、広告の内容を改ざんする行為、その他広告配信に支障をきたす行為をしてはなりません。</li>
+                    <li>当社は、広告の内容、品質、正確性について保証しません。広告経由で発生したトラブルについて、当社は責任を負いません。</li>
+                </ol>
+
+                <h2 id="section6">第6条（禁止事項）</h2>
                 <p>ユーザーは、本アプリの利用にあたり、以下の行為をしてはなりません。</p>
                 <ol>
                     <li>法令または公序良俗に違反する行為</li>
@@ -127,7 +573,7 @@
                     <li>その他、当社が不適切と判断する行為</li>
                 </ol>
 
-                <h2 id="section6">第6条（コンテンツの取扱い）</h2>
+                <h2 id="section7">第7条（コンテンツの取扱い）</h2>
                 <ol>
                     <li>ユーザーが本アプリを通じて作成したコンテンツ（マインドマップ、音声データ、テキストデータ等）の著作権は、ユーザーに帰属します。</li>
                     <li>本アプリは、ユーザーのコンテンツを端末内にのみ保存し、当社のサーバーには保存しません。</li>
@@ -135,7 +581,7 @@
                     <li>ユーザーは、PDF出力機能を使用して、作成したマインドマップをエクスポートできます。</li>
                 </ol>
 
-                <h2 id="section7">第7条（保証の否認および免責）</h2>
+                <h2 id="section8">第8条（保証の否認および免責）</h2>
                 <ol>
                     <li>当社は、本アプリが特定の目的に適合すること、期待する機能・正確性・有用性を有すること、不具合が生じないこと等について、明示又は黙示を問わず何ら保証するものではありません。</li>
                     <li>当社は、外部サービスの品質、精度、可用性について保証しません。これらのサービスの障害により本アプリが利用できない場合でも、当社は責任を負いません。</li>
@@ -145,20 +591,20 @@
                     <li>外部サービスの利用制限により、本アプリの一部機能が一時的に利用できなくなる場合がありますが、当社は責任を負いません。</li>
                 </ol>
 
-                <h2 id="section8">第8条（利用規約の変更）</h2>
+                <h2 id="section9">第9条（利用規約の変更）</h2>
                 <ol>
                     <li>当社は、ユーザーに通知することなく、いつでも本規約を変更することができるものとします。</li>
                     <li>変更後の本規約は、本アプリ内または当社ウェブサイトに掲載した時点から効力を生じるものとします。</li>
                     <li>本規約の変更後、本アプリの利用を継続した場合、ユーザーは変更後の本規約に同意したものとみなされます。</li>
                 </ol>
 
-                <h2 id="section9">第9条（準拠法および管轄裁判所）</h2>
+                <h2 id="section10">第10条（準拠法および管轄裁判所）</h2>
                 <ol>
                     <li>本規約の準拠法は日本法とします。</li>
                     <li>本アプリに関して紛争が生じた場合には、当社の本店所在地を管轄する裁判所を専属的合意管轄裁判所とします。</li>
                 </ol>
 
-                <h2 id="section10">第10条（お問い合わせ）</h2>
+                <h2 id="section11">第11条（お問い合わせ）</h2>
                 <p>本規約に関するお問い合わせは、以下のメールアドレスまでお願いいたします。</p>
                 <p><strong>Email:</strong> <a href="mailto:voicemap.developer@gmail.com">voicemap.developer@gmail.com</a></p>
 
