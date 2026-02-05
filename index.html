@@ -4,11 +4,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description"
-        content="VoiceMap - 音声でマインドマップ・WBSを作成。話すだけでアイデアを整理し、プロジェクト計画まで可視化。広告非表示のプレミアムプランも。">
-    <meta name="keywords" content="VoiceMap, マインドマップ, WBS, 音声入力, 思考整理, プロジェクト管理, タスク管理, アイデア整理">
-    <title>VoiceMap - 音声でマインドマップ・WBSを作成</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- SEO基本メタタグ -->
+    <title>VoiceMap - 声とAIでマインドマップ・WBS作成アプリ | 音声入力で思考整理</title>
+    <meta name="description" content="VoiceMap - 声とAIでマインドマップ・WBSを作成。話すだけでアイデアを整理、AIアシスタントが構造改善を提案。毎月30分無料。iPhone/iPad対応の思考整理アプリ。">
+    <meta name="keywords" content="VoiceMap, マインドマップ, マインドマップ アプリ, WBS, 音声入力, AI, AIアシスタント, 思考整理, プロジェクト管理, ブレインストーミング, アイデア整理, タスク管理">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="VoiceMap">
+    <link rel="canonical" href="https://voicemap.net/">
+
+    <!-- OGP (Open Graph Protocol) -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="VoiceMap - 声とAIでマインドマップ・WBS作成アプリ">
+    <meta property="og:description" content="話すだけでマインドマップを作成。AIアシスタントが構造改善を提案。毎月30分無料で使える思考整理アプリ。">
+    <meta property="og:image" content="https://voicemap.net/image/ogp.png">
+    <meta property="og:url" content="https://voicemap.net/">
+    <meta property="og:site_name" content="VoiceMap">
+    <meta property="og:locale" content="ja_JP">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="VoiceMap - 声とAIでマインドマップ・WBS作成">
+    <meta name="twitter:description" content="話すだけでマインドマップを作成。AIが構造改善を提案。毎月30分無料。">
+    <meta name="twitter:image" content="https://voicemap.net/image/ogp.png">
+
+    <!-- App Store Smart Banner -->
+    <meta name="apple-itunes-app" content="app-id=6753699686">
+
+    <!-- 構造化データ (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "VoiceMap",
+        "applicationCategory": "ProductivityApplication",
+        "operatingSystem": "iOS 15.0+",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "JPY",
+            "description": "毎月30分の無料音声入力枠付き"
+        },
+        "description": "声とAIでマインドマップ・WBSを作成するアプリ。話すだけでアイデアを整理し、AIアシスタントが構造改善を提案。",
+        "downloadUrl": "https://apps.apple.com/us/app/voice-powered-mind-maps-wbs/id6753699686",
+        "screenshot": "https://voicemap.net/image/mindmap.png",
+        "featureList": ["音声入力でマインドマップ作成", "AIアシスタントによる構造改善提案", "WBS(作業分解構造)対応", "PDF出力", "ピンチズーム対応"]
+    }
+    </script>
+
+    <!-- Font Awesome - 遅延読み込みでパフォーマンス向上 -->
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"></noscript>
     <style>
         * {
             margin: 0;
@@ -17,36 +63,53 @@
         }
 
         :root {
-            --primary-color: #667eea;
+            --primary: #667eea;
             --primary-dark: #764ba2;
-            --success-color: #34C759;
-            --warning-color: #FF9500;
-            --info-color: #5856D6;
-            --text-primary: #1C1C1E;
-            --text-secondary: #3A3A3C;
-            --text-tertiary: #8E8E93;
-            --background: #FFFFFF;
-            --surface: #F2F2F7;
-            --border: #D1D1D6;
-            --gradient-start: #667eea;
-            --gradient-end: #764ba2;
+            --accent: #10B981;
+            --warning: #F59E0B;
+            --text-primary: #1a1a2e;
+            --text-secondary: #4a4a6a;
+            --text-muted: #8a8aa3;
+            --bg-primary: #ffffff;
+            --bg-secondary: #f8fafc;
+            --bg-tertiary: #f1f5f9;
+            --border: #e2e8f0;
+            --gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --gradient-soft: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+            --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
+            --shadow-md: 0 4px 12px rgba(0,0,0,0.08);
+            --shadow-lg: 0 12px 40px rgba(0,0,0,0.12);
+            --radius-sm: 8px;
+            --radius-md: 16px;
+            --radius-lg: 24px;
+            --radius-xl: 32px;
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
-            line-height: 1.6;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Hiragino Sans', 'Noto Sans JP', sans-serif;
+            line-height: 1.7;
             color: var(--text-primary);
-            background-color: var(--background);
+            background-color: var(--bg-primary);
+            overflow-x: hidden;
         }
 
-        /* Hero Section */
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* ============================================
+           Hero Section
+           ============================================ */
         .hero {
-            background: linear-gradient(135deg, var(--gradient-start) 0%, var(--gradient-end) 100%);
-            color: white;
-            padding: 120px 20px 80px;
-            text-align: center;
+            min-height: 100vh;
+            background: var(--gradient);
             position: relative;
-            overflow: hidden;
+            display: flex;
+            align-items: center;
+            padding: 80px 24px;
         }
 
         .hero::before {
@@ -56,223 +119,486 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="2" fill="white" opacity="0.1"/></svg>');
-            background-size: 50px 50px;
+            background:
+                radial-gradient(circle at 20% 80%, rgba(255,255,255,0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(255,255,255,0.1) 0%, transparent 50%);
+        }
+
+        .hero-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+            position: relative;
+            z-index: 1;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 60px;
         }
 
         .hero-content {
-            max-width: 1200px;
-            margin: 0 auto;
+            max-width: 560px;
+            flex-shrink: 0;
+        }
+
+        .hero-image {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 360px;
+            height: 280px;
             position: relative;
-            z-index: 1;
+        }
+
+        .hero-image img {
+            position: absolute;
+            width: 320px;
+            height: auto;
+            border-radius: 0;
+            opacity: 0;
+            animation: fadeSlide 6s ease-in-out infinite;
+        }
+
+        .hero-image img:nth-child(1) {
+            animation-delay: 0s;
+        }
+
+        .hero-image img:nth-child(2) {
+            animation-delay: 3s;
+        }
+
+        @keyframes fadeSlide {
+            0%, 45% {
+                opacity: 1;
+            }
+            50%, 95% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        @media (max-width: 900px) {
+            .hero {
+                min-height: auto;
+                padding: 100px 24px 80px;
+            }
+
+            .hero-container {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .hero-content {
+                max-width: 100%;
+            }
+
+            .hero-buttons {
+                justify-content: center;
+            }
+
+            .hero-image {
+                width: 100vw;
+                max-width: 100vw;
+                margin-left: -24px;
+                margin-right: -24px;
+                aspect-ratio: 1 / 1;
+                margin-top: 40px;
+            }
+
+            .hero-image img {
+                width: 100%;
+                max-width: 100%;
+                height: auto;
+                max-height: 100%;
+                object-fit: contain;
+            }
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255,255,255,0.2);
+            backdrop-filter: blur(10px);
+            padding: 8px 16px;
+            border-radius: 100px;
+            color: white;
+            font-size: 14px;
+            font-weight: 500;
+            margin-bottom: 24px;
+        }
+
+        .hero-badge i {
+            color: #fbbf24;
         }
 
         .hero h1 {
-            font-size: 48px;
-            font-weight: 700;
+            font-size: clamp(40px, 6vw, 64px);
+            font-weight: 800;
+            color: white;
+            line-height: 1.1;
             margin-bottom: 24px;
-            line-height: 1.2;
+            letter-spacing: -0.02em;
         }
 
-        .hero p {
-            font-size: 20px;
+        .hero-subtitle {
+            font-size: clamp(18px, 2.5vw, 22px);
+            color: rgba(255,255,255,0.9);
             margin-bottom: 40px;
-            opacity: 0.9;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
+            line-height: 1.6;
         }
 
-        .cta-buttons {
+        .hero-buttons {
             display: flex;
             gap: 16px;
-            justify-content: center;
             flex-wrap: wrap;
         }
 
-        .btn {
+        .btn-app-store {
             display: inline-block;
-            padding: 16px 32px;
-            border-radius: 12px;
-            font-size: 18px;
-            font-weight: 600;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            border: none;
-            cursor: pointer;
+            transition: transform 0.3s ease, opacity 0.3s ease;
         }
 
-        .btn-primary {
-            background-color: white;
-            color: var(--primary-color);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        .btn-app-store img {
+            height: 54px;
+            width: auto;
+            display: block;
         }
 
-        .btn-primary:hover {
+        .btn-app-store:hover {
             transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+            opacity: 0.95;
         }
 
         .btn-secondary {
-            background-color: rgba(255, 255, 255, 0.2);
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 16px 28px;
+            background: rgba(255,255,255,0.15);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.3);
+            border-radius: var(--radius-md);
             color: white;
-            border: 2px solid white;
+            font-size: 16px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
         }
 
         .btn-secondary:hover {
-            background-color: rgba(255, 255, 255, 0.3);
+            background: rgba(255,255,255,0.25);
+            transform: translateY(-2px);
         }
 
-        /* Features Section */
-        .features {
-            padding: 100px 20px;
-            background-color: var(--background);
+        /* ============================================
+           Section Common
+           ============================================ */
+        section {
+            padding: 120px 24px;
         }
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
+        .section-header {
+            text-align: center;
+            margin-bottom: 64px;
+        }
+
+        .section-label {
+            display: inline-block;
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--primary);
+            background: var(--gradient-soft);
+            padding: 8px 16px;
+            border-radius: 100px;
+            margin-bottom: 16px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
         }
 
         .section-title {
-            font-size: 36px;
-            font-weight: 700;
-            text-align: center;
-            margin-bottom: 16px;
+            font-size: clamp(32px, 4vw, 48px);
+            font-weight: 800;
             color: var(--text-primary);
+            margin-bottom: 16px;
+            letter-spacing: -0.02em;
         }
 
         .section-subtitle {
             font-size: 18px;
-            text-align: center;
-            margin-bottom: 60px;
             color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto;
         }
 
-        .features-grid {
+        /* ============================================
+           Bento Grid Features
+           ============================================ */
+        .features {
+            background: var(--bg-secondary);
+        }
+
+        .bento-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 40px;
-            margin-top: 60px;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(2, auto);
+            gap: 20px;
         }
 
-        .feature-card {
-            background-color: var(--surface);
+        .bento-item {
+            background: var(--bg-primary);
+            border-radius: var(--radius-lg);
             padding: 32px;
-            border-radius: 16px;
+            position: relative;
+            overflow: hidden;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid var(--border);
         }
 
-        .feature-card:hover {
+        .bento-item:hover {
             transform: translateY(-4px);
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+            box-shadow: var(--shadow-lg);
         }
 
-        .feature-icon {
-            width: 64px;
-            height: 64px;
-            border-radius: 16px;
+        .bento-item.large {
+            grid-column: span 2;
+        }
+
+        .bento-icon {
+            width: 56px;
+            height: 56px;
+            border-radius: var(--radius-md);
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 32px;
+            font-size: 24px;
             margin-bottom: 20px;
         }
 
-        .feature-card h3 {
+        .bento-item h3 {
             font-size: 22px;
-            font-weight: 600;
+            font-weight: 700;
             margin-bottom: 12px;
             color: var(--text-primary);
         }
 
-        .feature-card p {
+        .bento-item p {
+            font-size: 15px;
             color: var(--text-secondary);
-            line-height: 1.8;
+            line-height: 1.7;
         }
 
-        /* Pricing Section */
+        .badge-new {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: var(--gradient);
+            color: white;
+            font-size: 12px;
+            font-weight: 700;
+            padding: 6px 12px;
+            border-radius: 100px;
+        }
+
+        /* Icon colors */
+        .icon-voice { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; }
+        .icon-ai { background: linear-gradient(135deg, #10B981 0%, #059669 100%); color: white; }
+        .icon-mindmap { background: linear-gradient(135deg, #F59E0B 0%, #D97706 100%); color: white; }
+        .icon-wbs { background: linear-gradient(135deg, #3B82F6 0%, #2563EB 100%); color: white; }
+        .icon-pdf { background: linear-gradient(135deg, #EF4444 0%, #DC2626 100%); color: white; }
+        .icon-zoom { background: linear-gradient(135deg, #8B5CF6 0%, #7C3AED 100%); color: white; }
+
+        /* ============================================
+           How it Works
+           ============================================ */
+        .how-it-works {
+            background: var(--bg-primary);
+        }
+
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            position: relative;
+        }
+
+        .steps-grid::before {
+            content: '';
+            position: absolute;
+            top: 60px;
+            left: 20%;
+            right: 20%;
+            height: 2px;
+            background: var(--gradient);
+            opacity: 0.3;
+        }
+
+        .step-item {
+            text-align: center;
+            position: relative;
+        }
+
+        .step-number {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: var(--gradient);
+            color: white;
+            font-size: 32px;
+            font-weight: 800;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 24px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .step-item h3 {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: var(--text-primary);
+        }
+
+        .step-item p {
+            font-size: 16px;
+            color: var(--text-secondary);
+        }
+
+        /* ============================================
+           Use Cases
+           ============================================ */
+        .use-cases {
+            background: var(--bg-secondary);
+        }
+
+        .use-cases-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .use-case-card {
+            background: var(--bg-primary);
+            border-radius: var(--radius-lg);
+            padding: 32px 24px;
+            text-align: center;
+            border: 1px solid var(--border);
+            transition: all 0.3s ease;
+        }
+
+        .use-case-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--primary);
+        }
+
+        .use-case-icon {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .use-case-card h3 {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: var(--text-primary);
+        }
+
+        .use-case-card p {
+            font-size: 14px;
+            color: var(--text-secondary);
+        }
+
+        /* ============================================
+           Pricing
+           ============================================ */
         .pricing {
-            padding: 100px 20px;
-            background: linear-gradient(135deg, #F2F2F7 0%, #E5E5EA 100%);
+            background: var(--bg-primary);
         }
 
         .pricing-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 40px;
-            margin-top: 60px;
-            max-width: 900px;
-            margin-left: auto;
-            margin-right: auto;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            max-width: 1000px;
+            margin: 0 auto;
         }
 
         .pricing-card {
-            background-color: white;
+            background: var(--bg-primary);
+            border-radius: var(--radius-lg);
             padding: 40px 32px;
-            border-radius: 16px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            border: 2px solid var(--border);
             position: relative;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            transition: all 0.3s ease;
         }
 
         .pricing-card:hover {
             transform: translateY(-4px);
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+            box-shadow: var(--shadow-lg);
         }
 
-        .pricing-card.recommended {
-            border: 3px solid var(--primary-color);
+        .pricing-card.featured {
+            border-color: var(--primary);
+            background: linear-gradient(180deg, rgba(102, 126, 234, 0.05) 0%, var(--bg-primary) 100%);
         }
 
         .pricing-badge {
             display: inline-block;
-            padding: 6px 16px;
-            border-radius: 20px;
-            font-size: 14px;
-            font-weight: 600;
+            padding: 6px 14px;
+            border-radius: 100px;
+            font-size: 13px;
+            font-weight: 700;
             margin-bottom: 16px;
         }
 
-        .pricing-badge.free {
-            background-color: var(--success-color);
-            color: white;
-        }
-
-        .pricing-badge.recommended {
-            background: linear-gradient(135deg, var(--primary-color) 0%, var(--info-color) 100%);
-            color: white;
-        }
+        .badge-free { background: #dcfce7; color: #166534; }
+        .badge-featured { background: var(--gradient); color: white; }
+        .badge-addon { background: #e0e7ff; color: #3730a3; }
 
         .pricing-card h3 {
             font-size: 24px;
             font-weight: 700;
-            margin-bottom: 16px;
+            margin-bottom: 8px;
             color: var(--text-primary);
         }
 
-        .price {
-            font-size: 36px;
-            font-weight: 700;
-            color: var(--primary-color);
-            margin-bottom: 8px;
+        .pricing-price {
+            font-size: 40px;
+            font-weight: 800;
+            color: var(--primary);
+            margin-bottom: 4px;
         }
 
-        .price-description {
-            font-size: 14px;
+        .pricing-price span {
+            font-size: 16px;
+            font-weight: 500;
             color: var(--text-secondary);
+        }
+
+        .pricing-desc {
+            font-size: 14px;
+            color: var(--text-muted);
             margin-bottom: 24px;
         }
 
         .pricing-features {
             list-style: none;
-            margin-bottom: 20px;
         }
 
         .pricing-features li {
-            padding: 10px 0;
+            padding: 12px 0;
+            font-size: 15px;
             color: var(--text-secondary);
             border-bottom: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            gap: 12px;
         }
 
         .pricing-features li:last-child {
@@ -280,54 +606,22 @@
         }
 
         .pricing-features i {
-            color: var(--success-color);
-            margin-right: 12px;
+            color: var(--accent);
+            font-size: 14px;
         }
 
         .pricing-note {
-            font-size: 12px;
-            color: var(--text-tertiary);
+            font-size: 13px;
+            color: var(--text-muted);
             margin-top: 16px;
             font-style: italic;
         }
 
-        /* Benefits Section */
-        .benefits {
-            padding: 100px 20px;
-            background-color: var(--background);
-        }
-
-        .benefits-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 32px;
-            margin-top: 60px;
-        }
-
-        .benefit-item {
-            text-align: center;
-        }
-
-        .benefit-icon {
-            font-size: 48px;
-            margin-bottom: 16px;
-        }
-
-        .benefit-item h4 {
-            font-size: 20px;
-            font-weight: 600;
-            margin-bottom: 8px;
-            color: var(--text-primary);
-        }
-
-        .benefit-item p {
-            color: var(--text-secondary);
-        }
-
-        /* Privacy Section */
+        /* ============================================
+           Privacy
+           ============================================ */
         .privacy {
-            padding: 100px 20px;
-            background-color: var(--background);
+            background: var(--bg-secondary);
         }
 
         .privacy-content {
@@ -337,11 +631,13 @@
         }
 
         .privacy-badge {
-            display: inline-block;
-            background: linear-gradient(135deg, var(--success-color) 0%, #28A745 100%);
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--accent);
             color: white;
             padding: 12px 24px;
-            border-radius: 24px;
+            border-radius: 100px;
             font-size: 16px;
             font-weight: 600;
             margin-bottom: 24px;
@@ -349,85 +645,132 @@
 
         .privacy-features {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            grid-template-columns: repeat(2, 1fr);
             gap: 24px;
-            margin-top: 40px;
+            margin-top: 48px;
         }
 
         .privacy-feature {
-            background-color: var(--surface);
-            padding: 24px;
-            border-radius: 12px;
+            background: var(--bg-primary);
+            border-radius: var(--radius-lg);
+            padding: 32px;
+            border: 1px solid var(--border);
         }
 
-        .privacy-feature-icon {
-            font-size: 32px;
-            margin-bottom: 12px;
+        .privacy-feature i {
+            font-size: 40px;
+            color: var(--primary);
+            margin-bottom: 16px;
         }
 
         .privacy-feature h4 {
-            font-size: 18px;
-            font-weight: 600;
+            font-size: 20px;
+            font-weight: 700;
             margin-bottom: 8px;
+            color: var(--text-primary);
         }
 
         .privacy-feature p {
-            font-size: 14px;
+            font-size: 15px;
             color: var(--text-secondary);
         }
 
-        /* CTA Section */
-        .cta-section {
-            padding: 100px 20px;
-            background: linear-gradient(135deg, var(--primary-color) 0%, var(--info-color) 100%);
-            color: white;
+        /* ============================================
+           CTA
+           ============================================ */
+        .cta {
+            background: var(--gradient);
             text-align: center;
+            position: relative;
+            overflow: hidden;
         }
 
-        .cta-section h2 {
-            font-size: 36px;
-            font-weight: 700;
-            margin-bottom: 24px;
+        .cta::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background:
+                radial-gradient(circle at 30% 70%, rgba(255,255,255,0.1) 0%, transparent 50%),
+                radial-gradient(circle at 70% 30%, rgba(255,255,255,0.1) 0%, transparent 50%);
         }
 
-        .cta-section p {
-            font-size: 18px;
-            margin-bottom: 40px;
-            opacity: 0.9;
+        .cta-content {
+            position: relative;
+            z-index: 1;
         }
 
-        /* Footer */
-        footer {
-            padding: 60px 20px 40px;
-            background-color: var(--text-primary);
+        .cta h2 {
+            font-size: clamp(32px, 4vw, 48px);
+            font-weight: 800;
             color: white;
+            margin-bottom: 16px;
+        }
+
+        .cta p {
+            font-size: 18px;
+            color: rgba(255,255,255,0.9);
+            margin-bottom: 40px;
+        }
+
+        .cta-note {
+            margin-top: 24px;
+            font-size: 14px;
+            color: rgba(255,255,255,0.7);
+        }
+
+        /* ============================================
+           Footer
+           ============================================ */
+        footer {
+            background: var(--text-primary);
+            color: white;
+            padding: 64px 24px 40px;
         }
 
         .footer-content {
             max-width: 1200px;
             margin: 0 auto;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 40px;
+            grid-template-columns: 2fr repeat(3, 1fr);
+            gap: 48px;
         }
 
-        .footer-section h4 {
-            font-size: 18px;
-            font-weight: 600;
+        .footer-brand h4 {
+            font-size: 24px;
+            font-weight: 700;
             margin-bottom: 16px;
+        }
+
+        .footer-brand p {
+            color: rgba(255,255,255,0.6);
+            font-size: 14px;
+            line-height: 1.8;
+        }
+
+        .footer-section h5 {
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: rgba(255,255,255,0.5);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
         }
 
         .footer-section ul {
             list-style: none;
         }
 
-        .footer-section ul li {
+        .footer-section li {
             margin-bottom: 12px;
         }
 
         .footer-section a {
-            color: rgba(255, 255, 255, 0.7);
+            color: rgba(255,255,255,0.7);
             text-decoration: none;
+            font-size: 15px;
             transition: color 0.3s ease;
         }
 
@@ -437,68 +780,137 @@
 
         .footer-bottom {
             max-width: 1200px;
-            margin: 40px auto 0;
+            margin: 48px auto 0;
             padding-top: 32px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            border-top: 1px solid rgba(255,255,255,0.1);
             text-align: center;
-            color: rgba(255, 255, 255, 0.6);
+            color: rgba(255,255,255,0.5);
+            font-size: 14px;
         }
 
-        /* Responsive */
+        /* ============================================
+           Responsive
+           ============================================ */
+        @media (max-width: 1024px) {
+            .bento-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .bento-item.large {
+                grid-column: span 2;
+            }
+
+            .use-cases-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .pricing-grid {
+                grid-template-columns: 1fr;
+                max-width: 400px;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
         @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 36px;
+            section {
+                padding: 80px 20px;
             }
 
-            .hero p {
-                font-size: 18px;
+            .hero {
+                padding: 60px 20px;
+                min-height: auto;
             }
 
-            .section-title {
-                font-size: 28px;
-            }
-
-            .features-grid,
-            .benefits-grid {
+            .bento-grid {
                 grid-template-columns: 1fr;
             }
 
-            .cta-buttons {
-                flex-direction: column;
+            .bento-item.large {
+                grid-column: span 1;
             }
 
-            .btn {
-                width: 100%;
+            .steps-grid {
+                grid-template-columns: 1fr;
+                gap: 48px;
+            }
+
+            .steps-grid::before {
+                display: none;
+            }
+
+            .use-cases-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .privacy-features {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
             }
         }
 
-        /* Animations */
+        /* ============================================
+           Animations
+           ============================================ */
         @keyframes fadeInUp {
             from {
                 opacity: 0;
                 transform: translateY(30px);
             }
-
             to {
                 opacity: 1;
                 transform: translateY(0);
             }
         }
 
-        .animate-on-scroll {
-            animation: fadeInUp 0.6s ease-out;
+        .animate {
+            animation: fadeInUp 0.6s ease-out forwards;
         }
+
+        .delay-1 { animation-delay: 0.1s; }
+        .delay-2 { animation-delay: 0.2s; }
+        .delay-3 { animation-delay: 0.3s; }
+        .delay-4 { animation-delay: 0.4s; }
     </style>
 </head>
 
 <body>
     <!-- Hero Section -->
     <section class="hero">
-        <div class="hero-content">
-            <h1>VoiceMap<br><span style="font-size: 24px; font-weight: 400; opacity: 0.9;">音声でマインドマップ・WBSを作成</span></h1>
-            <p>話すだけで思考を整理。音声入力でマインドマップやWBSを作成し、アイデア整理からプロジェクト計画まで幅広く対応。キーボード入力は不要、音声だけで完結。</p>
-            <div class="cta-buttons">
-                <a href="#features" class="btn btn-secondary"><i class="fas fa-star"></i> 機能を見る</a>
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <i class="fas fa-microphone"></i>
+                    音声入力でマップ作成
+                </div>
+                <h1>VoiceMap - 声とAIで作る<br><nobr>マインドマップ・WBS</nobr></h1>
+                <p class="hero-subtitle">
+                    話すだけでマインドマップを作成。キーボード不要、音声だけで完結。プレミアムプランならAIアシスタントが構造の改善も提案します。
+                </p>
+                <div class="hero-buttons">
+                    <a href="https://apps.apple.com/us/app/voice-powered-mind-maps-wbs/id6753699686" target="_blank" rel="noopener noreferrer" class="btn-app-store">
+                        <img src="image/ios-badge.svg" alt="VoiceMapをApp Storeからダウンロード - 無料で始められる音声マインドマップアプリ">
+                    </a>
+                    <a href="#features" class="btn-secondary">
+                        <i class="fas fa-arrow-down"></i>
+                        機能を見る
+                    </a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="image/mindmap.png" alt="VoiceMapで音声入力して作成したマインドマップのスクリーンショット - アイデアを放射状に可視化">
+                <img src="image/wbs.png" alt="VoiceMapのWBS（作業分解構造）表示 - プロジェクトのタスクを階層的に整理">
             </div>
         </div>
     </section>
@@ -506,138 +918,177 @@
     <!-- Features Section -->
     <section id="features" class="features">
         <div class="container">
-            <h2 class="section-title">主な機能</h2>
-            <p class="section-subtitle">思考整理をサポートする、充実した機能</p>
+            <div class="section-header">
+                <span class="section-label">Features</span>
+                <h2 class="section-title">VoiceMapの機能</h2>
+                <p class="section-subtitle">思考整理をサポートする、直感的で使いやすい機能</p>
+            </div>
 
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon"
-                        style="background: linear-gradient(135deg, #10B981 0%, #059669 100%); color: white;">
-                        <i class="fas fa-th-large" style="font-size: 32px;"></i>
+            <div class="bento-grid">
+                <!-- Voice Input - Large -->
+                <div class="bento-item large">
+                    <div class="bento-icon icon-voice">
+                        <i class="fas fa-microphone"></i>
                     </div>
-                    <h3>2つの可視化モード</h3>
-                    <p><strong>マインドマップ</strong>：アイデアを放射状に展開し、ブレストや創造的思考に最適。<br><strong>WBS</strong>：作業を階層的に分解し、プロジェクト計画やタスク管理に最適。</p>
+                    <h3>音声入力でマインドマップ作成</h3>
+                    <p>マイクボタンを押して話すだけで、あなたの思考を正確にテキスト化。高精度な音声認識で、文字起こし結果は手動で編集も可能です。移動中、会議中、いつでもどこでも記録できます。</p>
                 </div>
 
-                <div class="feature-card">
-                    <div class="feature-icon"
-                        style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white;">
-                        <i class="fas fa-microphone" style="font-size: 32px;"></i>
+                <!-- AI Assistant - Large -->
+                <div class="bento-item large">
+                    <span class="badge-new">Premium</span>
+                    <div class="bento-icon icon-ai">
+                        <i class="fas fa-robot"></i>
                     </div>
-                    <h3>高精度な音声認識</h3>
-                    <p>高精度な音声認識を採用。マイクボタンを押して話すだけで、あなたの思考を正確にテキスト化します。文字起こし結果は手動で編集も可能です。</p>
+                    <h3>AIアシスタントで構造改善</h3>
+                    <p>チャット形式でAIに話しかけるだけで、ノードの追加・編集・削除が可能。「〇〇を追加して」「この構造を整理して」など、自然な会話でマップを操作。AIが構造の改善も提案します。<strong>※プレミアム限定</strong></p>
                 </div>
 
-                <div class="feature-card">
-                    <div class="feature-icon"
-                        style="background: linear-gradient(135deg, #34C759 0%, #28A745 100%); color: white;">
-                        <i class="fas fa-hand-pointer" style="font-size: 32px;"></i>
+                <!-- Mind Map -->
+                <div class="bento-item">
+                    <div class="bento-icon icon-mindmap">
+                        <i class="fas fa-project-diagram"></i>
                     </div>
-                    <h3>直感的な操作</h3>
-                    <p>ノードをタップしてメニューから操作。親子関係の変更やテキスト編集が簡単にでき、思考の構造を素早く整理できます。</p>
+                    <h3>マインドマップ表示</h3>
+                    <p>アイデアを放射状に展開。ブレインストーミングや創造的思考に最適なマインドマップアプリです。</p>
                 </div>
 
-                <div class="feature-card">
-                    <div class="feature-icon"
-                        style="background: linear-gradient(135deg, #FF9500 0%, #FF6B00 100%); color: white;">
-                        <i class="fas fa-project-diagram" style="font-size: 32px;"></i>
+                <!-- WBS -->
+                <div class="bento-item">
+                    <div class="bento-icon icon-wbs">
+                        <i class="fas fa-sitemap"></i>
                     </div>
-                    <h3>視覚的に整理</h3>
-                    <p>自動生成されたマップで、複雑な思考も一目で把握。親子関係の編集も簡単にできます。</p>
+                    <h3>WBS(作業分解構造)</h3>
+                    <p>作業を階層的に分解。プロジェクト計画やタスク管理に最適なWBSアプリ機能。</p>
                 </div>
 
-                <div class="feature-card">
-                    <div class="feature-icon"
-                        style="background: linear-gradient(135deg, #5856D6 0%, #4527A0 100%); color: white;">
-                        <i class="fas fa-mobile-alt" style="font-size: 32px;"></i>
-                    </div>
-                    <h3>いつでもどこでも</h3>
-                    <p>スマートフォンがあればOK。通勤中、散歩中、カフェで、いつでもどこでもアイデアを記録・整理できます。</p>
-                </div>
-
-                <div class="feature-card">
-                    <div class="feature-icon"
-                        style="background: linear-gradient(135deg, #00C7BE 0%, #00A896 100%); color: white;">
-                        <i class="fas fa-file-pdf" style="font-size: 32px;"></i>
+                <!-- PDF Export -->
+                <div class="bento-item">
+                    <div class="bento-icon icon-pdf">
+                        <i class="fas fa-file-pdf"></i>
                     </div>
                     <h3>PDF出力</h3>
-                    <p>作成したマインドマップをPDFで保存・共有。プレゼンや会議資料としても活用できます。タイトル付きで見やすく出力されます。</p>
+                    <p>作成したマップをPDFで保存・共有。プレゼンにも活用。</p>
+                </div>
+
+                <!-- Pinch Zoom -->
+                <div class="bento-item">
+                    <div class="bento-icon icon-zoom">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                    <h3>ピンチズーム</h3>
+                    <p>マップを拡大・縮小して、細部まで確認できます。</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Benefits Section -->
-    <section class="benefits">
+    <!-- How it Works -->
+    <section class="how-it-works">
         <div class="container">
-            <h2 class="section-title">使いやすさを追求した設計</h2>
-            <p class="section-subtitle">シンプルで直感的、誰でも使いやすい</p>
+            <div class="section-header">
+                <span class="section-label">How it Works</span>
+                <h2 class="section-title">3ステップで簡単</h2>
+                <p class="section-subtitle">シンプルな操作で、すぐに使い始められます</p>
+            </div>
 
-            <div class="benefits-grid">
-                <div class="benefit-item">
-                    <div class="benefit-icon"><i class="fas fa-hand-pointer" style="color: var(--primary-color);"></i></div>
-                    <h4>シンプルなUI</h4>
-                    <p>余計な情報を排除し、必要な機能だけを直感的に配置</p>
+            <div class="steps-grid">
+                <div class="step-item">
+                    <div class="step-number">1</div>
+                    <h3>話す</h3>
+                    <p>マイクボタンを押して、アイデアを声に出すだけ</p>
                 </div>
 
-                <div class="benefit-item">
-                    <div class="benefit-icon"><i class="fas fa-palette" style="color: var(--success-color);"></i></div>
-                    <h4>視覚的なフィードバック</h4>
-                    <p>色、アイコン、アニメーションで状態を分かりやすく表示</p>
+                <div class="step-item">
+                    <div class="step-number">2</div>
+                    <h3>整理する</h3>
+                    <p>自動でノードを作成、親子関係を編集して構造化</p>
                 </div>
 
-                <div class="benefit-item">
-                    <div class="benefit-icon"><i class="fas fa-moon" style="color: var(--info-color);"></i></div>
-                    <h4>ダークモード対応</h4>
-                    <p>目に優しいダークモードで、夜間も快適に使用可能</p>
-                </div>
-
-                <div class="benefit-item">
-                    <div class="benefit-icon"><i class="fas fa-search-plus" style="color: var(--warning-color);"></i></div>
-                    <h4>ピンチズーム</h4>
-                    <p>マインドマップを拡大・縮小して、細部まで確認できます</p>
+                <div class="step-item">
+                    <div class="step-number">3</div>
+                    <h3>共有</h3>
+                    <p>PDFで出力して、チームやクライアントに共有</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Pricing Section -->
+    <!-- Use Cases -->
+    <section class="use-cases">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Use Cases</span>
+                <h2 class="section-title">活用シーン</h2>
+                <p class="section-subtitle">様々なシーンで思考整理をサポート</p>
+            </div>
+
+            <div class="use-cases-grid">
+                <div class="use-case-card">
+                    <div class="use-case-icon"><i class="fas fa-lightbulb" style="color: #F59E0B;"></i></div>
+                    <h3>ブレインストーミング</h3>
+                    <p>思いついたアイデアを音声で即座にマップ化</p>
+                </div>
+
+                <div class="use-case-card">
+                    <div class="use-case-icon"><i class="fas fa-tasks" style="color: #10B981;"></i></div>
+                    <h3>プロジェクト計画</h3>
+                    <p>WBSで作業を階層的に分解・整理</p>
+                </div>
+
+                <div class="use-case-card">
+                    <div class="use-case-icon"><i class="fas fa-brain" style="color: #8B5CF6;"></i></div>
+                    <h3>日常の思考整理</h3>
+                    <p>モヤモヤした考えを可視化して整理</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing -->
     <section class="pricing">
         <div class="container">
-            <h2 class="section-title">選べる料金プラン</h2>
-            <p class="section-subtitle">月間30分の無料枠で気軽に始められます</p>
+            <div class="section-header">
+                <span class="section-label">Pricing</span>
+                <h2 class="section-title">料金プラン</h2>
+                <p class="section-subtitle">月間30分の無料枠で気軽に始められます</p>
+            </div>
 
-            <div class="pricing-grid" style="max-width: 1100px; grid-template-columns: repeat(3, 1fr);">
+            <div class="pricing-grid">
+                <!-- Free Plan -->
                 <div class="pricing-card">
-                    <div class="pricing-badge free">無料</div>
+                    <span class="pricing-badge badge-free">無料</span>
                     <h3>フリープラン</h3>
-                    <div class="price">¥0</div>
-                    <p class="price-description">毎月30分の無料音声認識枠</p>
+                    <div class="pricing-price">¥0</div>
+                    <p class="pricing-desc">毎月30分の無料音声入力枠</p>
                     <ul class="pricing-features">
-                        <li><i class="fas fa-check"></i> 全機能利用可能</li>
+                        <li><i class="fas fa-check"></i> 音声入力でマップ作成</li>
                         <li><i class="fas fa-check"></i> マップ無制限作成</li>
                         <li><i class="fas fa-check"></i> PDF出力無制限</li>
-                        <li><i class="fas fa-check"></i> 広告表示あり</li>
+                        <li><i class="fas fa-times" style="color: #9ca3af;"></i> <span style="color: #9ca3af;">AIアシスタントは利用不可</span></li>
                     </ul>
                 </div>
 
-                <div class="pricing-card recommended">
-                    <div class="pricing-badge recommended">おすすめ</div>
+                <!-- Premium Plan -->
+                <div class="pricing-card featured">
+                    <span class="pricing-badge badge-featured">おすすめ</span>
                     <h3>プレミアムプラン</h3>
-                    <div class="price">¥250<span style="font-size: 16px; font-weight: 400;">/月</span></div>
-                    <p class="price-description">いつでも解約可能</p>
+                    <div class="pricing-price">¥250<span>/月</span></div>
+                    <p class="pricing-desc">いつでも解約可能</p>
                     <ul class="pricing-features">
+                        <li><i class="fas fa-check"></i> <strong>AIアシスタント</strong></li>
                         <li><i class="fas fa-check"></i> <strong>広告非表示</strong></li>
-                        <li><i class="fas fa-check"></i> <strong>音声認識無制限</strong></li>
+                        <li><i class="fas fa-check"></i> <strong>音声入力無制限</strong></li>
                         <li><i class="fas fa-check"></i> 全機能利用可能</li>
                     </ul>
                 </div>
 
+                <!-- Add-on -->
                 <div class="pricing-card">
-                    <div class="pricing-badge" style="background-color: var(--info-color); color: white;">都度課金</div>
+                    <span class="pricing-badge badge-addon">都度課金</span>
                     <h3>時間追加パック</h3>
-                    <div class="price">¥50〜</div>
-                    <p class="price-description">必要な時に追加購入</p>
+                    <div class="pricing-price">¥50〜</div>
+                    <p class="pricing-desc">必要な時に追加購入</p>
                     <ul class="pricing-features">
                         <li><i class="fas fa-check"></i> 30分: ¥50</li>
                         <li><i class="fas fa-check"></i> 60分: ¥100</li>
@@ -650,70 +1101,75 @@
         </div>
     </section>
 
-    <!-- Privacy Section -->
+    <!-- Privacy -->
     <section class="privacy">
         <div class="container">
             <div class="privacy-content">
-                <div class="privacy-badge"><i class="fas fa-shield-alt"></i> プライバシー第一</div>
-                <h2 class="section-title">あなたのデータは、あなただけのもの</h2>
-                <p class="section-subtitle">マインドマップは全てデバイス内に安全に保存されます。</p>
+                <span class="privacy-badge">
+                    <i class="fas fa-shield-alt"></i>
+                    プライバシー第一
+                </span>
+                <h2 class="section-title">あなたのデータは、<br>あなただけのもの</h2>
+                <p class="section-subtitle">マインドマップは全てデバイス内に安全に保存されます</p>
 
                 <div class="privacy-features">
                     <div class="privacy-feature">
-                        <div class="privacy-feature-icon"><i class="fas fa-mobile-alt"
-                                style="color: var(--primary-color);"></i></div>
+                        <i class="fas fa-mobile-alt"></i>
                         <h4>ローカルストレージ</h4>
-                        <p>マップは全てデバイス内に保存</p>
+                        <p>マップは全てデバイス内に保存。クラウドへの自動同期なし。</p>
                     </div>
 
                     <div class="privacy-feature">
-                        <div class="privacy-feature-icon"><i class="fas fa-user-slash"
-                                style="color: var(--info-color);"></i></div>
+                        <i class="fas fa-user-slash"></i>
                         <h4>アカウント不要</h4>
-                        <p>個人情報の登録は一切不要</p>
+                        <p>個人情報の登録は一切不要。すぐに使い始められます。</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- CTA Section -->
-    <section class="cta-section">
+    <!-- CTA -->
+    <section class="cta">
         <div class="container">
-            <h2>今すぐ始めよう</h2>
-            <p>VoiceMapで、話すだけで思考を整理。あなたのアイデアを形にしましょう。</p>
-            <p style="margin-top: 24px; font-size: 14px; opacity: 0.8;">無料でダウンロード・利用できます</p>
+            <div class="cta-content">
+                <h2>今すぐ始めよう</h2>
+                <p>VoiceMapで、声の力で思考を整理。あなたのアイデアを形にしましょう。</p>
+                <a href="https://apps.apple.com/us/app/voice-powered-mind-maps-wbs/id6753699686" target="_blank" rel="noopener noreferrer" class="btn-app-store">
+                    <img src="image/ios-badge.svg" alt="VoiceMapをApp Storeからダウンロード - 今すぐ無料で始める">
+                </a>
+                <p class="cta-note">無料でダウンロード・利用できます</p>
+            </div>
         </div>
     </section>
 
     <!-- Footer -->
     <footer>
         <div class="footer-content">
-            <div class="footer-section">
+            <div class="footer-brand">
                 <h4>VoiceMap</h4>
-                <p style="color: rgba(255, 255, 255, 0.7); line-height: 1.8;">
-                    音声でマインドマップ・WBSを作成する、新しい思考整理アプリ。話すだけでアイデアを可視化します。
-                </p>
+                <p>声とAIでマインドマップ・WBSを作成する、新しい思考整理アプリ。話すだけでアイデアを可視化します。</p>
             </div>
 
             <div class="footer-section">
-                <h4>機能</h4>
+                <h5>機能</h5>
                 <ul>
                     <li><a href="#features">音声入力</a></li>
+                    <li><a href="#features">AIアシスタント</a></li>
                     <li><a href="#features">マインドマップ・WBS</a></li>
                     <li><a href="#features">PDF出力</a></li>
                 </ul>
             </div>
 
             <div class="footer-section">
-                <h4>サポート</h4>
+                <h5>サポート</h5>
                 <ul>
-                    <li><a href="mailto:support@example.com">お問い合わせ</a></li>
+                    <li><a href="mailto:voicemap.developer@gmail.com">お問い合わせ</a></li>
                 </ul>
             </div>
 
             <div class="footer-section">
-                <h4>法的情報</h4>
+                <h5>法的情報</h5>
                 <ul>
                     <li><a href="terms.html">利用規約</a></li>
                     <li><a href="policy.html">プライバシーポリシー</a></li>
@@ -727,7 +1183,7 @@
     </footer>
 
     <script>
-        // Smooth scroll for anchor links
+        // Smooth scroll
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -741,21 +1197,21 @@
             });
         });
 
-        // Animate elements on scroll
+        // Intersection Observer for animations
         const observerOptions = {
             threshold: 0.1,
-            rootMargin: '0px 0px -100px 0px'
+            rootMargin: '0px 0px -50px 0px'
         };
 
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    entry.target.classList.add('animate-on-scroll');
+                    entry.target.classList.add('animate');
                 }
             });
         }, observerOptions);
 
-        document.querySelectorAll('.feature-card, .benefit-item, .privacy-feature').forEach(el => {
+        document.querySelectorAll('.bento-item, .step-item, .use-case-card, .pricing-card, .privacy-feature').forEach(el => {
             observer.observe(el);
         });
     </script>
