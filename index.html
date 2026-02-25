@@ -6,32 +6,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- SEO基本メタタグ -->
-    <title>VoiceMap - 声とAIでマインドマップ・WBS作成アプリ | 音声入力で思考整理</title>
-    <meta name="description" content="VoiceMap - 声とAIでマインドマップ・WBSを作成。話すだけでアイデアを整理、AIアシスタントが構造改善を提案。毎月30分無料。iPhone/iPad対応の思考整理アプリ。">
+    <title>VoiceMap - 無料マインドマップアプリ | 音声入力とAIで思考整理・WBS作成</title>
+    <meta name="description" content="【無料】マインドマップアプリ VoiceMap。音声入力で話すだけでアイデア整理・思考整理。AIがマップ構造を改善提案。WBS・PDF出力・ブレインストーミングに最適。iPhone/iPad対応、毎月30分無料。">
     <meta name="keywords" content="VoiceMap, マインドマップ, マインドマップ アプリ, WBS, 音声入力, AI, AIアシスタント, 思考整理, プロジェクト管理, ブレインストーミング, アイデア整理, タスク管理">
     <meta name="robots" content="index, follow">
     <meta name="author" content="VoiceMap">
     <link rel="canonical" href="https://voicemap.net/">
 
+    <!-- hreflang（多言語対応準備） -->
+    <link rel="alternate" hreflang="ja" href="https://voicemap.net/">
+    <link rel="alternate" hreflang="x-default" href="https://voicemap.net/">
+
     <!-- OGP (Open Graph Protocol) -->
     <meta property="og:type" content="website">
-    <meta property="og:title" content="VoiceMap - 声とAIでマインドマップ・WBS作成アプリ">
-    <meta property="og:description" content="話すだけでマインドマップを作成。AIアシスタントが構造改善を提案。毎月30分無料で使える思考整理アプリ。">
-    <meta property="og:image" content="https://voicemap.net/image/ogp.png">
+    <meta property="og:title" content="VoiceMap - 無料マインドマップアプリ | 音声入力とAIで思考整理">
+    <meta property="og:description" content="【無料】話すだけでマインドマップを作成。AIアシスタントが構造改善を提案。WBS・PDF出力対応。毎月30分無料で使える思考整理アプリ。">
+    <meta property="og:image" content="https://voicemap.net/image/mindmap.png">
+    <meta property="og:image:width" content="1206">
+    <meta property="og:image:height" content="2463">
+    <meta property="og:image:alt" content="VoiceMap - 音声入力でマインドマップを作成するiOSアプリのスクリーンショット">
     <meta property="og:url" content="https://voicemap.net/">
     <meta property="og:site_name" content="VoiceMap">
     <meta property="og:locale" content="ja_JP">
+    <meta property="og:locale:alternate" content="en_US">
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="VoiceMap - 声とAIでマインドマップ・WBS作成">
+    <meta name="twitter:title" content="VoiceMap - 無料マインドマップアプリ | 音声入力とAIで思考整理">
     <meta name="twitter:description" content="話すだけでマインドマップを作成。AIが構造改善を提案。毎月30分無料。">
-    <meta name="twitter:image" content="https://voicemap.net/image/ogp.png">
+    <meta name="twitter:image" content="https://voicemap.net/image/mindmap.png">
+    <meta name="twitter:image:alt" content="VoiceMap - 音声入力でマインドマップを作成するiOSアプリ">
 
     <!-- App Store Smart Banner -->
     <meta name="apple-itunes-app" content="app-id=6753699686">
 
-    <!-- 構造化データ (JSON-LD) -->
+    <!-- 構造化データ (JSON-LD) - SoftwareApplication -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -39,18 +48,141 @@
         "name": "VoiceMap",
         "applicationCategory": "ProductivityApplication",
         "operatingSystem": "iOS 15.0+",
-        "offers": {
-            "@type": "Offer",
-            "price": "0",
-            "priceCurrency": "JPY",
-            "description": "毎月30分の無料音声入力枠付き"
-        },
-        "description": "声とAIでマインドマップ・WBSを作成するアプリ。話すだけでアイデアを整理し、AIアシスタントが構造改善を提案。",
+        "offers": [
+            {
+                "@type": "Offer",
+                "price": "0",
+                "priceCurrency": "JPY",
+                "description": "フリープラン - 毎月30分の無料音声入力枠付き",
+                "availability": "https://schema.org/InStock"
+            },
+            {
+                "@type": "Offer",
+                "price": "250",
+                "priceCurrency": "JPY",
+                "description": "プレミアムプラン - AIアシスタント・広告非表示・音声入力無制限",
+                "availability": "https://schema.org/InStock"
+            }
+        ],
+        "description": "音声入力でマインドマップ・WBSを作成するiOSアプリ。話すだけでアイデアを整理し、AIアシスタントが構造改善を提案。ブレインストーミングやタスク管理に最適な思考整理アプリ。",
         "downloadUrl": "https://apps.apple.com/us/app/voice-powered-mind-maps-wbs/id6753699686",
-        "screenshot": "https://voicemap.net/image/mindmap.png",
-        "featureList": ["音声入力でマインドマップ作成", "AIアシスタントによる構造改善提案", "WBS(作業分解構造)対応", "PDF出力", "ピンチズーム対応"]
+        "screenshot": [
+            "https://voicemap.net/image/mindmap.png",
+            "https://voicemap.net/image/wbs.png"
+        ],
+        "featureList": [
+            "音声入力でマインドマップ作成",
+            "AIアシスタントによる構造改善提案",
+            "WBS(作業分解構造)対応",
+            "PDF出力",
+            "ピンチズーム対応",
+            "アカウント登録不要",
+            "データはデバイス内に保存"
+        ],
+        "inLanguage": ["ja", "en"],
+        "softwareVersion": "1.2.0"
     }
     </script>
+
+    <!-- 構造化データ (JSON-LD) - WebSite -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "VoiceMap",
+        "alternateName": "ボイスマップ",
+        "url": "https://voicemap.net/",
+        "description": "音声入力でマインドマップ・WBSを作成するiOSアプリ",
+        "inLanguage": "ja"
+    }
+    </script>
+
+    <!-- 構造化データ (JSON-LD) - Organization -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "VoiceMap",
+        "url": "https://voicemap.net/",
+        "logo": "https://voicemap.net/image/mindmap.png",
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "email": "voicemap.developer@gmail.com",
+            "contactType": "customer support"
+        }
+    }
+    </script>
+
+    <!-- 構造化データ (JSON-LD) - BreadcrumbList -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "ホーム",
+                "item": "https://voicemap.net/"
+            }
+        ]
+    }
+    </script>
+
+    <!-- 構造化データ (JSON-LD) - FAQPage -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "VoiceMapは無料で使えますか？",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "はい、VoiceMapは無料でダウンロード・利用できます。毎月30分の無料音声入力枠が付与され、マインドマップの作成数やPDF出力に制限はありません。さらに時間が必要な場合は、プレミアムプラン（月額¥250で音声入力無制限＋AIアシスタント）や時間追加パック（¥50〜）をご利用いただけます。"
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "マインドマップアプリとして何が特徴的ですか？",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "VoiceMapは音声入力でマインドマップを作成できる点が最大の特徴です。キーボード入力不要で、話すだけでアイデアをマップ化できます。さらに、プレミアムプランではAIアシスタントがマップの構造改善を提案します。マインドマップとWBS（作業分解構造）の両方に対応しており、思考整理からプロジェクト管理まで幅広く活用できます。"
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "音声データやマインドマップはクラウドに保存されますか？",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "いいえ。音声認識はすべて端末内で処理され、外部サーバーには送信されません。作成したマインドマップもすべてデバイス内（ローカルストレージ）に保存されます。アカウント登録も不要なため、プライバシーを重視する方にも安心してお使いいただけます。"
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "WBSとは何ですか？マインドマップとの違いは？",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "WBS（Work Breakdown Structure / 作業分解構造）は、プロジェクトの作業を階層的に分解して管理する手法です。マインドマップがアイデアを放射状に展開するのに対し、WBSはタスクをツリー構造で整理します。VoiceMapでは同じデータをマインドマップ表示とWBS表示で切り替えられるため、ブレインストーミングからタスク管理までシームレスに移行できます。"
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "iPhone以外（Android）でも使えますか？",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "現在VoiceMapはiOS（iPhone / iPad）専用アプリです。iOS 15.0以降に対応しています。Android版は将来的な対応を検討中です。"
+                }
+            }
+        ]
+    }
+    </script>
+
+    <!-- リソースヒント -->
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+    <link rel="dns-prefetch" href="https://apps.apple.com">
 
     <!-- Font Awesome - 遅延読み込みでパフォーマンス向上 -->
     <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
@@ -91,6 +223,78 @@
             color: var(--text-primary);
             background-color: var(--bg-primary);
             overflow-x: hidden;
+        }
+
+        /* Skip Link (Accessibility) */
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: var(--primary);
+            color: white;
+            padding: 8px 16px;
+            text-decoration: none;
+            z-index: 100;
+            border-radius: 0 0 var(--radius-sm) 0;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .skip-link:focus {
+            top: 0;
+        }
+
+        /* Site Header & Navigation */
+        .site-header {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 10;
+            padding: 20px 24px;
+        }
+
+        .site-nav {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .nav-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .nav-logo {
+            font-size: 20px;
+            font-weight: 800;
+            color: white;
+            text-decoration: none;
+            letter-spacing: -0.02em;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 32px;
+        }
+
+        .nav-links a {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: white;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
         }
 
         /* Container */
@@ -663,7 +867,7 @@
             margin-bottom: 16px;
         }
 
-        .privacy-feature h4 {
+        .privacy-feature h3 {
             font-size: 20px;
             font-weight: 700;
             margin-bottom: 8px;
@@ -673,6 +877,76 @@
         .privacy-feature p {
             font-size: 15px;
             color: var(--text-secondary);
+        }
+
+        /* ============================================
+           FAQ
+           ============================================ */
+        .faq {
+            background: var(--bg-primary);
+        }
+
+        .faq-list {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            margin-bottom: 16px;
+            overflow: hidden;
+            transition: box-shadow 0.3s ease;
+        }
+
+        .faq-item:hover {
+            box-shadow: var(--shadow-md);
+        }
+
+        .faq-item[open] {
+            border-color: var(--primary);
+        }
+
+        .faq-question {
+            padding: 24px 32px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            list-style: none;
+        }
+
+        .faq-question::-webkit-details-marker {
+            display: none;
+        }
+
+        .faq-question h3 {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin: 0;
+        }
+
+        .faq-toggle::after {
+            content: '+';
+            font-size: 24px;
+            font-weight: 300;
+            color: var(--primary);
+            transition: transform 0.3s ease;
+        }
+
+        .faq-item[open] .faq-toggle::after {
+            content: '\2212';
+        }
+
+        .faq-answer {
+            padding: 0 32px 24px;
+        }
+
+        .faq-answer p {
+            font-size: 16px;
+            color: var(--text-secondary);
+            line-height: 1.8;
         }
 
         /* ============================================
@@ -738,10 +1012,11 @@
             gap: 48px;
         }
 
-        .footer-brand h4 {
+        .footer-brand-name {
             font-size: 24px;
             font-weight: 700;
             margin-bottom: 16px;
+            color: white;
         }
 
         .footer-brand p {
@@ -750,7 +1025,7 @@
             line-height: 1.8;
         }
 
-        .footer-section h5 {
+        .footer-section-title {
             font-size: 14px;
             font-weight: 600;
             margin-bottom: 20px;
@@ -858,6 +1133,14 @@
                 flex-direction: column;
                 align-items: center;
             }
+
+            .faq-question {
+                padding: 20px 24px;
+            }
+
+            .faq-answer {
+                padding: 0 24px 20px;
+            }
         }
 
         /* ============================================
@@ -886,273 +1169,365 @@
 </head>
 
 <body>
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-container">
-            <div class="hero-content">
-                <div class="hero-badge">
-                    <i class="fas fa-microphone"></i>
-                    音声入力でマップ作成
-                </div>
-                <h1>VoiceMap - 声とAIで作る<br><nobr>マインドマップ・WBS</nobr></h1>
-                <p class="hero-subtitle">
-                    話すだけでマインドマップを作成。キーボード不要、音声だけで完結。プレミアムプランならAIアシスタントが構造の改善も提案します。
-                </p>
-                <div class="hero-buttons">
-                    <a href="https://apps.apple.com/us/app/voice-powered-mind-maps-wbs/id6753699686" target="_blank" rel="noopener noreferrer" class="btn-app-store">
-                        <img src="image/ios-badge.svg" alt="VoiceMapをApp Storeからダウンロード - 無料で始められる音声マインドマップアプリ">
-                    </a>
-                    <a href="#features" class="btn-secondary">
-                        <i class="fas fa-arrow-down"></i>
-                        機能を見る
-                    </a>
-                </div>
-            </div>
-            <div class="hero-image">
-                <img src="image/mindmap.png" alt="VoiceMapで音声入力して作成したマインドマップのスクリーンショット - アイデアを放射状に可視化">
-                <img src="image/wbs.png" alt="VoiceMapのWBS（作業分解構造）表示 - プロジェクトのタスクを階層的に整理">
-            </div>
-        </div>
-    </section>
+    <!-- Skip Navigation Link -->
+    <a href="#main-content" class="skip-link">メインコンテンツへスキップ</a>
 
-    <!-- Features Section -->
-    <section id="features" class="features">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-label">Features</span>
-                <h2 class="section-title">VoiceMapの機能</h2>
-                <p class="section-subtitle">思考整理をサポートする、直感的で使いやすい機能</p>
+    <!-- Site Header with Navigation -->
+    <header class="site-header" role="banner">
+        <nav class="site-nav" aria-label="メインナビゲーション">
+            <div class="nav-container">
+                <a href="/" class="nav-logo" aria-label="VoiceMap ホーム">VoiceMap</a>
+                <ul class="nav-links">
+                    <li><a href="#features">機能</a></li>
+                    <li><a href="#how-it-works">使い方</a></li>
+                    <li><a href="#use-cases">活用シーン</a></li>
+                    <li><a href="#pricing">料金</a></li>
+                    <li><a href="#faq">よくある質問</a></li>
+                </ul>
             </div>
+        </nav>
+    </header>
 
-            <div class="bento-grid">
-                <!-- Voice Input - Large -->
-                <div class="bento-item large">
-                    <div class="bento-icon icon-voice">
-                        <i class="fas fa-microphone"></i>
+    <main id="main-content">
+        <!-- Hero Section -->
+        <section id="hero" class="hero" aria-label="VoiceMapの紹介">
+            <div class="hero-container">
+                <div class="hero-content">
+                    <div class="hero-badge">
+                        <i class="fas fa-microphone" aria-hidden="true"></i>
+                        音声入力でマップ作成
                     </div>
-                    <h3>音声入力でマインドマップ作成</h3>
-                    <p>マイクボタンを押して話すだけで、あなたの思考を正確にテキスト化。高精度な音声認識で、文字起こし結果は手動で編集も可能です。移動中、会議中、いつでもどこでも記録できます。</p>
-                </div>
-
-                <!-- AI Assistant - Large -->
-                <div class="bento-item large">
-                    <span class="badge-new">Premium</span>
-                    <div class="bento-icon icon-ai">
-                        <i class="fas fa-robot"></i>
+                    <h1>VoiceMap - 声とAIで作る<br><nobr>マインドマップ・WBS</nobr></h1>
+                    <p class="hero-subtitle">
+                        話すだけでマインドマップを作成。キーボード不要、音声だけで完結。プレミアムプランならAIアシスタントが構造の改善も提案します。
+                    </p>
+                    <div class="hero-buttons">
+                        <a href="https://apps.apple.com/us/app/voice-powered-mind-maps-wbs/id6753699686" target="_blank" rel="noopener noreferrer" class="btn-app-store">
+                            <img src="image/ios-badge.svg" alt="VoiceMapをApp Storeからダウンロード - 無料で始められる音声マインドマップアプリ" width="147" height="54">
+                        </a>
+                        <a href="https://play.google.com/store/apps/details?id=com.sikakou.voicemap" target="_blank" rel="noopener noreferrer" class="btn-app-store">
+                            <img src="image/android-badge.svg" alt="VoiceMapをGoogle Playからダウンロード - 無料で始められる音声マインドマップアプリ" width="165" height="54">
+                        </a>
+                        <a href="#features" class="btn-secondary">
+                            <i class="fas fa-arrow-down" aria-hidden="true"></i>
+                            機能を見る
+                        </a>
                     </div>
-                    <h3>AIアシスタントで構造改善</h3>
-                    <p>チャット形式でAIに話しかけるだけで、ノードの追加・編集・削除が可能。「〇〇を追加して」「この構造を整理して」など、自然な会話でマップを操作。AIが構造の改善も提案します。<strong>※プレミアム限定</strong></p>
                 </div>
-
-                <!-- Mind Map -->
-                <div class="bento-item">
-                    <div class="bento-icon icon-mindmap">
-                        <i class="fas fa-project-diagram"></i>
-                    </div>
-                    <h3>マインドマップ表示</h3>
-                    <p>アイデアを放射状に展開。ブレインストーミングや創造的思考に最適なマインドマップアプリです。</p>
-                </div>
-
-                <!-- WBS -->
-                <div class="bento-item">
-                    <div class="bento-icon icon-wbs">
-                        <i class="fas fa-sitemap"></i>
-                    </div>
-                    <h3>WBS(作業分解構造)</h3>
-                    <p>作業を階層的に分解。プロジェクト計画やタスク管理に最適なWBSアプリ機能。</p>
-                </div>
-
-                <!-- PDF Export -->
-                <div class="bento-item">
-                    <div class="bento-icon icon-pdf">
-                        <i class="fas fa-file-pdf"></i>
-                    </div>
-                    <h3>PDF出力</h3>
-                    <p>作成したマップをPDFで保存・共有。プレゼンにも活用。</p>
-                </div>
-
-                <!-- Pinch Zoom -->
-                <div class="bento-item">
-                    <div class="bento-icon icon-zoom">
-                        <i class="fas fa-search-plus"></i>
-                    </div>
-                    <h3>ピンチズーム</h3>
-                    <p>マップを拡大・縮小して、細部まで確認できます。</p>
+                <div class="hero-image">
+                    <img src="image/mindmap.png" alt="VoiceMapで音声入力して作成したマインドマップのスクリーンショット - アイデアを放射状に可視化" width="1206" height="2463" fetchpriority="high">
+                    <img src="image/wbs.png" alt="VoiceMapのWBS（作業分解構造）表示 - プロジェクトのタスクを階層的に整理" width="1206" height="2463">
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- How it Works -->
-    <section class="how-it-works">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-label">How it Works</span>
-                <h2 class="section-title">3ステップで簡単</h2>
-                <p class="section-subtitle">シンプルな操作で、すぐに使い始められます</p>
-            </div>
-
-            <div class="steps-grid">
-                <div class="step-item">
-                    <div class="step-number">1</div>
-                    <h3>話す</h3>
-                    <p>マイクボタンを押して、アイデアを声に出すだけ</p>
+        <!-- Features Section -->
+        <section id="features" class="features" aria-label="機能紹介">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-label">Features</span>
+                    <h2 class="section-title">VoiceMapの機能</h2>
+                    <p class="section-subtitle">思考整理をサポートする、直感的で使いやすい機能</p>
                 </div>
 
-                <div class="step-item">
-                    <div class="step-number">2</div>
-                    <h3>整理する</h3>
-                    <p>自動でノードを作成、親子関係を編集して構造化</p>
-                </div>
-
-                <div class="step-item">
-                    <div class="step-number">3</div>
-                    <h3>共有</h3>
-                    <p>PDFで出力して、チームやクライアントに共有</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Use Cases -->
-    <section class="use-cases">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-label">Use Cases</span>
-                <h2 class="section-title">活用シーン</h2>
-                <p class="section-subtitle">様々なシーンで思考整理をサポート</p>
-            </div>
-
-            <div class="use-cases-grid">
-                <div class="use-case-card">
-                    <div class="use-case-icon"><i class="fas fa-lightbulb" style="color: #F59E0B;"></i></div>
-                    <h3>ブレインストーミング</h3>
-                    <p>思いついたアイデアを音声で即座にマップ化</p>
-                </div>
-
-                <div class="use-case-card">
-                    <div class="use-case-icon"><i class="fas fa-tasks" style="color: #10B981;"></i></div>
-                    <h3>プロジェクト計画</h3>
-                    <p>WBSで作業を階層的に分解・整理</p>
-                </div>
-
-                <div class="use-case-card">
-                    <div class="use-case-icon"><i class="fas fa-brain" style="color: #8B5CF6;"></i></div>
-                    <h3>日常の思考整理</h3>
-                    <p>モヤモヤした考えを可視化して整理</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Pricing -->
-    <section class="pricing">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-label">Pricing</span>
-                <h2 class="section-title">料金プラン</h2>
-                <p class="section-subtitle">月間30分の無料枠で気軽に始められます</p>
-            </div>
-
-            <div class="pricing-grid">
-                <!-- Free Plan -->
-                <div class="pricing-card">
-                    <span class="pricing-badge badge-free">無料</span>
-                    <h3>フリープラン</h3>
-                    <div class="pricing-price">¥0</div>
-                    <p class="pricing-desc">毎月30分の無料音声入力枠</p>
-                    <ul class="pricing-features">
-                        <li><i class="fas fa-check"></i> 音声入力でマップ作成</li>
-                        <li><i class="fas fa-check"></i> マップ無制限作成</li>
-                        <li><i class="fas fa-check"></i> PDF出力無制限</li>
-                        <li><i class="fas fa-times" style="color: #9ca3af;"></i> <span style="color: #9ca3af;">AIアシスタントは利用不可</span></li>
-                    </ul>
-                </div>
-
-                <!-- Premium Plan -->
-                <div class="pricing-card featured">
-                    <span class="pricing-badge badge-featured">おすすめ</span>
-                    <h3>プレミアムプラン</h3>
-                    <div class="pricing-price">¥250<span>/月</span></div>
-                    <p class="pricing-desc">いつでも解約可能</p>
-                    <ul class="pricing-features">
-                        <li><i class="fas fa-check"></i> <strong>AIアシスタント</strong></li>
-                        <li><i class="fas fa-check"></i> <strong>広告非表示</strong></li>
-                        <li><i class="fas fa-check"></i> <strong>音声入力無制限</strong></li>
-                        <li><i class="fas fa-check"></i> 全機能利用可能</li>
-                    </ul>
-                </div>
-
-                <!-- Add-on -->
-                <div class="pricing-card">
-                    <span class="pricing-badge badge-addon">都度課金</span>
-                    <h3>時間追加パック</h3>
-                    <div class="pricing-price">¥50〜</div>
-                    <p class="pricing-desc">必要な時に追加購入</p>
-                    <ul class="pricing-features">
-                        <li><i class="fas fa-check"></i> 30分: ¥50</li>
-                        <li><i class="fas fa-check"></i> 60分: ¥100</li>
-                        <li><i class="fas fa-check"></i> 120分: ¥150</li>
-                        <li><i class="fas fa-check"></i> 180分: ¥200</li>
-                    </ul>
-                    <p class="pricing-note">※ 購入した時間は無期限で使用可能</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Privacy -->
-    <section class="privacy">
-        <div class="container">
-            <div class="privacy-content">
-                <span class="privacy-badge">
-                    <i class="fas fa-shield-alt"></i>
-                    プライバシー第一
-                </span>
-                <h2 class="section-title">あなたのデータは、<br>あなただけのもの</h2>
-                <p class="section-subtitle">マインドマップは全てデバイス内に安全に保存されます</p>
-
-                <div class="privacy-features">
-                    <div class="privacy-feature">
-                        <i class="fas fa-mobile-alt"></i>
-                        <h4>ローカルストレージ</h4>
-                        <p>マップは全てデバイス内に保存。クラウドへの自動同期なし。</p>
+                <div class="bento-grid">
+                    <!-- Voice Input - Large -->
+                    <div class="bento-item large">
+                        <div class="bento-icon icon-voice">
+                            <i class="fas fa-microphone" aria-hidden="true"></i>
+                        </div>
+                        <h3>音声入力でマインドマップ作成</h3>
+                        <p>マイクボタンを押して話すだけで、あなたの思考を正確にテキスト化。高精度な音声認識で、文字起こし結果は手動で編集も可能です。移動中、会議中、いつでもどこでも記録できます。</p>
                     </div>
 
-                    <div class="privacy-feature">
-                        <i class="fas fa-user-slash"></i>
-                        <h4>アカウント不要</h4>
-                        <p>個人情報の登録は一切不要。すぐに使い始められます。</p>
+                    <!-- AI Assistant - Large -->
+                    <div class="bento-item large">
+                        <span class="badge-new">Premium</span>
+                        <div class="bento-icon icon-ai">
+                            <i class="fas fa-robot" aria-hidden="true"></i>
+                        </div>
+                        <h3>AIアシスタントで構造改善</h3>
+                        <p>チャット形式でAIに話しかけるだけで、ノードの追加・編集・削除が可能。「〇〇を追加して」「この構造を整理して」など、自然な会話でマップを操作。AIが構造の改善も提案します。<strong>※プレミアム限定</strong></p>
+                    </div>
+
+                    <!-- Mind Map -->
+                    <div class="bento-item">
+                        <div class="bento-icon icon-mindmap">
+                            <i class="fas fa-project-diagram" aria-hidden="true"></i>
+                        </div>
+                        <h3>マインドマップ表示</h3>
+                        <p>アイデアを放射状に展開。ブレインストーミングや創造的思考に最適なマインドマップアプリです。</p>
+                    </div>
+
+                    <!-- WBS -->
+                    <div class="bento-item">
+                        <div class="bento-icon icon-wbs">
+                            <i class="fas fa-sitemap" aria-hidden="true"></i>
+                        </div>
+                        <h3>WBS(作業分解構造)</h3>
+                        <p>作業を階層的に分解。プロジェクト計画やタスク管理に最適なWBSアプリ機能。</p>
+                    </div>
+
+                    <!-- PDF Export -->
+                    <div class="bento-item">
+                        <div class="bento-icon icon-pdf">
+                            <i class="fas fa-file-pdf" aria-hidden="true"></i>
+                        </div>
+                        <h3>PDF出力</h3>
+                        <p>作成したマップをPDFで保存・共有。プレゼンにも活用。</p>
+                    </div>
+
+                    <!-- Pinch Zoom -->
+                    <div class="bento-item">
+                        <div class="bento-icon icon-zoom">
+                            <i class="fas fa-search-plus" aria-hidden="true"></i>
+                        </div>
+                        <h3>ピンチズーム</h3>
+                        <p>マップを拡大・縮小して、細部まで確認できます。</p>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- CTA -->
-    <section class="cta">
-        <div class="container">
-            <div class="cta-content">
-                <h2>今すぐ始めよう</h2>
-                <p>VoiceMapで、声の力で思考を整理。あなたのアイデアを形にしましょう。</p>
-                <a href="https://apps.apple.com/us/app/voice-powered-mind-maps-wbs/id6753699686" target="_blank" rel="noopener noreferrer" class="btn-app-store">
-                    <img src="image/ios-badge.svg" alt="VoiceMapをApp Storeからダウンロード - 今すぐ無料で始める">
-                </a>
-                <p class="cta-note">無料でダウンロード・利用できます</p>
+        <!-- How it Works -->
+        <section id="how-it-works" class="how-it-works" aria-label="使い方">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-label">How it Works</span>
+                    <h2 class="section-title">3ステップで簡単</h2>
+                    <p class="section-subtitle">シンプルな操作で、すぐに使い始められます</p>
+                </div>
+
+                <div class="steps-grid">
+                    <div class="step-item">
+                        <div class="step-number" role="img" aria-label="ステップ1">1</div>
+                        <h3>話す</h3>
+                        <p>マイクボタンを押して、アイデアを声に出すだけ</p>
+                    </div>
+
+                    <div class="step-item">
+                        <div class="step-number" role="img" aria-label="ステップ2">2</div>
+                        <h3>整理する</h3>
+                        <p>自動でノードを作成、親子関係を編集して構造化</p>
+                    </div>
+
+                    <div class="step-item">
+                        <div class="step-number" role="img" aria-label="ステップ3">3</div>
+                        <h3>共有</h3>
+                        <p>PDFで出力して、チームやクライアントに共有</p>
+                    </div>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
+
+        <!-- Use Cases -->
+        <section id="use-cases" class="use-cases" aria-label="活用シーン">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-label">Use Cases</span>
+                    <h2 class="section-title">活用シーン</h2>
+                    <p class="section-subtitle">様々なシーンで思考整理をサポート</p>
+                </div>
+
+                <div class="use-cases-grid">
+                    <div class="use-case-card">
+                        <div class="use-case-icon"><i class="fas fa-lightbulb" style="color: #F59E0B;" aria-hidden="true"></i></div>
+                        <h3>ブレインストーミング</h3>
+                        <p>思いついたアイデアを音声で即座にマップ化</p>
+                    </div>
+
+                    <div class="use-case-card">
+                        <div class="use-case-icon"><i class="fas fa-tasks" style="color: #10B981;" aria-hidden="true"></i></div>
+                        <h3>プロジェクト計画</h3>
+                        <p>WBSで作業を階層的に分解・整理</p>
+                    </div>
+
+                    <div class="use-case-card">
+                        <div class="use-case-icon"><i class="fas fa-brain" style="color: #8B5CF6;" aria-hidden="true"></i></div>
+                        <h3>日常の思考整理</h3>
+                        <p>モヤモヤした考えを可視化して整理</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pricing -->
+        <section id="pricing" class="pricing" aria-label="料金プラン">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-label">Pricing</span>
+                    <h2 class="section-title">料金プラン</h2>
+                    <p class="section-subtitle">月間30分の無料枠で気軽に始められます</p>
+                </div>
+
+                <div class="pricing-grid">
+                    <!-- Free Plan -->
+                    <div class="pricing-card">
+                        <span class="pricing-badge badge-free">無料</span>
+                        <h3>フリープラン</h3>
+                        <div class="pricing-price">¥0</div>
+                        <p class="pricing-desc">毎月30分の無料音声入力枠</p>
+                        <ul class="pricing-features">
+                            <li><i class="fas fa-check" aria-hidden="true"></i> 音声入力でマップ作成</li>
+                            <li><i class="fas fa-check" aria-hidden="true"></i> マップ無制限作成</li>
+                            <li><i class="fas fa-check" aria-hidden="true"></i> PDF出力無制限</li>
+                            <li><i class="fas fa-times" style="color: #9ca3af;" aria-hidden="true"></i> <span style="color: #9ca3af;">AIアシスタントは利用不可</span></li>
+                        </ul>
+                    </div>
+
+                    <!-- Premium Plan -->
+                    <div class="pricing-card featured">
+                        <span class="pricing-badge badge-featured">おすすめ</span>
+                        <h3>プレミアムプラン</h3>
+                        <div class="pricing-price">¥250<span>/月</span></div>
+                        <p class="pricing-desc">いつでも解約可能</p>
+                        <ul class="pricing-features">
+                            <li><i class="fas fa-check" aria-hidden="true"></i> <strong>AIアシスタント</strong></li>
+                            <li><i class="fas fa-check" aria-hidden="true"></i> <strong>広告非表示</strong></li>
+                            <li><i class="fas fa-check" aria-hidden="true"></i> <strong>音声入力無制限</strong></li>
+                            <li><i class="fas fa-check" aria-hidden="true"></i> 全機能利用可能</li>
+                        </ul>
+                    </div>
+
+                    <!-- Add-on -->
+                    <div class="pricing-card">
+                        <span class="pricing-badge badge-addon">都度課金</span>
+                        <h3>時間追加パック</h3>
+                        <div class="pricing-price">¥50〜</div>
+                        <p class="pricing-desc">必要な時に追加購入</p>
+                        <ul class="pricing-features">
+                            <li><i class="fas fa-check" aria-hidden="true"></i> 30分: ¥50</li>
+                            <li><i class="fas fa-check" aria-hidden="true"></i> 60分: ¥100</li>
+                            <li><i class="fas fa-check" aria-hidden="true"></i> 120分: ¥150</li>
+                            <li><i class="fas fa-check" aria-hidden="true"></i> 180分: ¥200</li>
+                        </ul>
+                        <p class="pricing-note">※ 購入した時間は無期限で使用可能</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Privacy -->
+        <section id="privacy" class="privacy" aria-label="プライバシー">
+            <div class="container">
+                <div class="privacy-content">
+                    <span class="privacy-badge">
+                        <i class="fas fa-shield-alt" aria-hidden="true"></i>
+                        プライバシー第一
+                    </span>
+                    <h2 class="section-title">あなたのデータは、<br>あなただけのもの</h2>
+                    <p class="section-subtitle">マインドマップは全てデバイス内に安全に保存されます</p>
+
+                    <div class="privacy-features">
+                        <div class="privacy-feature">
+                            <i class="fas fa-mobile-alt" aria-hidden="true"></i>
+                            <h3>ローカルストレージ</h3>
+                            <p>マップは全てデバイス内に保存。クラウドへの自動同期なし。</p>
+                        </div>
+
+                        <div class="privacy-feature">
+                            <i class="fas fa-user-slash" aria-hidden="true"></i>
+                            <h3>アカウント不要</h3>
+                            <p>個人情報の登録は一切不要。すぐに使い始められます。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq" class="faq" aria-label="よくある質問">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-label">FAQ</span>
+                    <h2 class="section-title">よくある質問</h2>
+                    <p class="section-subtitle">VoiceMapについてのよくある質問にお答えします</p>
+                </div>
+
+                <div class="faq-list">
+                    <details class="faq-item" open>
+                        <summary class="faq-question">
+                            <h3>VoiceMapは無料で使えますか？</h3>
+                            <span class="faq-toggle" aria-hidden="true"></span>
+                        </summary>
+                        <div class="faq-answer">
+                            <p>はい、VoiceMapは無料でダウンロード・利用できます。毎月30分の無料音声入力枠が付与され、マインドマップの作成数やPDF出力に制限はありません。さらに時間が必要な場合は、プレミアムプラン（月額¥250で音声入力無制限＋AIアシスタント）や時間追加パック（¥50〜）をご利用いただけます。</p>
+                        </div>
+                    </details>
+
+                    <details class="faq-item">
+                        <summary class="faq-question">
+                            <h3>マインドマップアプリとして何が特徴的ですか？</h3>
+                            <span class="faq-toggle" aria-hidden="true"></span>
+                        </summary>
+                        <div class="faq-answer">
+                            <p>VoiceMapは音声入力でマインドマップを作成できる点が最大の特徴です。キーボード入力不要で、話すだけでアイデアをマップ化できます。さらに、プレミアムプランではAIアシスタントがマップの構造改善を提案します。マインドマップとWBS（作業分解構造）の両方に対応しており、思考整理からプロジェクト管理まで幅広く活用できます。</p>
+                        </div>
+                    </details>
+
+                    <details class="faq-item">
+                        <summary class="faq-question">
+                            <h3>音声データやマインドマップはクラウドに保存されますか？</h3>
+                            <span class="faq-toggle" aria-hidden="true"></span>
+                        </summary>
+                        <div class="faq-answer">
+                            <p>いいえ。音声認識はすべて端末内で処理され、外部サーバーには送信されません。作成したマインドマップもすべてデバイス内（ローカルストレージ）に保存されます。アカウント登録も不要なため、プライバシーを重視する方にも安心してお使いいただけます。</p>
+                        </div>
+                    </details>
+
+                    <details class="faq-item">
+                        <summary class="faq-question">
+                            <h3>WBSとは何ですか？マインドマップとの違いは？</h3>
+                            <span class="faq-toggle" aria-hidden="true"></span>
+                        </summary>
+                        <div class="faq-answer">
+                            <p>WBS（Work Breakdown Structure / 作業分解構造）は、プロジェクトの作業を階層的に分解して管理する手法です。マインドマップがアイデアを放射状に展開するのに対し、WBSはタスクをツリー構造で整理します。VoiceMapでは同じデータをマインドマップ表示とWBS表示で切り替えられるため、ブレインストーミングからタスク管理までシームレスに移行できます。</p>
+                        </div>
+                    </details>
+
+                    <details class="faq-item">
+                        <summary class="faq-question">
+                            <h3>iPhone以外（Android）でも使えますか？</h3>
+                            <span class="faq-toggle" aria-hidden="true"></span>
+                        </summary>
+                        <div class="faq-answer">
+                            <p>現在VoiceMapはiOS（iPhone / iPad）専用アプリです。iOS 15.0以降に対応しています。Android版は将来的な対応を検討中です。</p>
+                        </div>
+                    </details>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section id="cta" class="cta" aria-label="ダウンロード">
+            <div class="container">
+                <div class="cta-content">
+                    <h2>今すぐ始めよう</h2>
+                    <p>VoiceMapで、声の力で思考を整理。あなたのアイデアを形にしましょう。</p>
+                    <div class="hero-buttons" style="justify-content: center;">
+                        <a href="https://apps.apple.com/us/app/voice-powered-mind-maps-wbs/id6753699686" target="_blank" rel="noopener noreferrer" class="btn-app-store">
+                            <img src="image/ios-badge.svg" alt="VoiceMapをApp Storeからダウンロード - 今すぐ無料で始める" width="147" height="54" loading="lazy">
+                        </a>
+                        <a href="https://play.google.com/store/apps/details?id=com.sikakou.voicemap" target="_blank" rel="noopener noreferrer" class="btn-app-store">
+                            <img src="image/android-badge.svg" alt="VoiceMapをGoogle Playからダウンロード - 今すぐ無料で始める" width="165" height="54" loading="lazy">
+                        </a>
+                    </div>
+                    <p class="cta-note">無料でダウンロード・利用できます</p>
+                </div>
+            </div>
+        </section>
+    </main>
 
     <!-- Footer -->
     <footer>
         <div class="footer-content">
             <div class="footer-brand">
-                <h4>VoiceMap</h4>
+                <p class="footer-brand-name">VoiceMap</p>
                 <p>声とAIでマインドマップ・WBSを作成する、新しい思考整理アプリ。話すだけでアイデアを可視化します。</p>
             </div>
 
             <div class="footer-section">
-                <h5>機能</h5>
+                <p class="footer-section-title">機能</p>
                 <ul>
                     <li><a href="#features">音声入力</a></li>
                     <li><a href="#features">AIアシスタント</a></li>
@@ -1162,14 +1537,15 @@
             </div>
 
             <div class="footer-section">
-                <h5>サポート</h5>
+                <p class="footer-section-title">サポート</p>
                 <ul>
+                    <li><a href="#faq">よくある質問</a></li>
                     <li><a href="mailto:voicemap.developer@gmail.com">お問い合わせ</a></li>
                 </ul>
             </div>
 
             <div class="footer-section">
-                <h5>法的情報</h5>
+                <p class="footer-section-title">法的情報</p>
                 <ul>
                     <li><a href="terms.html">利用規約</a></li>
                     <li><a href="policy.html">プライバシーポリシー</a></li>
@@ -1211,7 +1587,7 @@
             });
         }, observerOptions);
 
-        document.querySelectorAll('.bento-item, .step-item, .use-case-card, .pricing-card, .privacy-feature').forEach(el => {
+        document.querySelectorAll('.bento-item, .step-item, .use-case-card, .pricing-card, .privacy-feature, .faq-item').forEach(el => {
             observer.observe(el);
         });
     </script>
